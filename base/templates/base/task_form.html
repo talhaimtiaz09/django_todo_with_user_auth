@@ -1,0 +1,15 @@
+
+{% extends 'base/index.html' %}
+
+{% block content %}
+<a href="{% url 'tasks' %}" class="text-white bg-green-500 px-4 py-2 mx-2 -mb-2 rounded hover:text-green-500 hover:bg-white">&larr; Go back</a>
+  <div class="max-w-md mx-auto mt-8">
+    <form action="" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="flex items-center justify-between mt-8">
+        <input type="submit" value="Submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+      </div>
+    </form>
+  </div>
+{% endblock content %}

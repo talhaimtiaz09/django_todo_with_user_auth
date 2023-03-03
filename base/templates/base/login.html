@@ -1,0 +1,30 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+<div class="flex justify-center items-center h-screen bg-green-100">
+    <div class="w-full max-w-md">
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST">
+        {% csrf_token %}
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="username">
+            Username
+          </label>
+          {{ form.username }}
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="password">
+            Password
+          </label>
+          {{ form.password }}
+        </div>
+        <div class="flex items-center justify-between">
+          <input class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="login" type="submit" value="Log In">
+          <a class="inline-block align-baseline font-bold text-sm text-green-500 hover:text-green-800" href="{% url 'register' %}">
+            Don't have an account?
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+{% endblock content %}

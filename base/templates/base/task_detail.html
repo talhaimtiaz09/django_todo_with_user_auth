@@ -1,0 +1,10 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+<a href="{% url 'tasks' %}" class="text-white bg-green-500 px-4 py-2 mx-2 -mb-2 rounded hover:text-green-500 hover:bg-white">&larr; Go back</a>
+  <div class="bg-white mx-auto w-2/3 p-5 rounded shadow-sm mt-32">
+    <p class="text-2xl font-bold text-green-500">{{ task.title }}</p>
+    <hr class="bg-green-500 h-1">
+    <p class=" mt-5 text-green-500">{{ task.description }}</p>
+  </div>
+{% endblock content %}
